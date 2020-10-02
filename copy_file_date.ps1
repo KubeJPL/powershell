@@ -1,4 +1,7 @@
 
+<#
+  This script is designed to copy files from multiple work stations to the main one
+#>
 
 $file_name_date = $args[0]
 
