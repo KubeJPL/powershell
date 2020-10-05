@@ -1,28 +1,34 @@
-
 <#
   This script is designed to copy files from multiple work stations to the main one
+  Syntax: .\copy_test.ps1 stage1 2020-06-05
 #>
 
-$file_name_date = $args[0]
+$prod = @('server1', 'server2', 'server3', 'server4')
 
-$source_ip = @('10.0.2.4', '10.0.2.5')
+$stage1 = @('server1', 'server2', 'server3', 'server4')
+
+$file_name_date = $args[1]
 
 $file_name = "webportal.log"
 
-if ($file_name_date){
-
-  $file_name = "$($file_name).$($file_name_date)"
-
+if ($file_name_date) {
+    $file_name = "$($file_name).$($file_name_date)"
 }
 
+if ($args[0] -eq "prod") {
+    $source_ip = $prod
+}
 
-$source_path = "\c$\Users\Administrator\Desktop\share_fold\$($file_name)"
-
-$destination_path = "C:\Users\Administrator\Desktop\"
+elseif ($args[0] -eq "stage1") {
+    $source_ip = $stage1
+}
+$source_path = "\e$\SnapshotLogs\webportal\$($file_name)"
+$destination_path = "C:\Users\aiacob006a\Desktop\logs\"
 
 
 foreach ($i in $source_ip) {
-$f_name = $i
+    $f_name = $i
     Copy-Item -Path \\"$($i)$($source_path)" -Destination "$($destination_path)$($i)_$($file_name)"
     echo "File $($file_name) from $($i) was copied to $($destination_path)$($i)_$($file_name)"
-    }
+
+}
