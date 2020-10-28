@@ -4,9 +4,9 @@ $server_source_name = "ADRIAN\SQLEXPRESS"
 
 $destinationdatabase = "AdventureWorks2012"
 
-$backup_dest = "C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\$destinationdatabase-$date"
+$backup_dest = "C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\$date_$destinationdatabase"
 
-$backup_source = "C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\$destinationdatabase-$date"
+$backup_source = "C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\Backup\$date_$destinationdatabase"
 
 
 
