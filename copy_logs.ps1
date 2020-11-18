@@ -1,8 +1,8 @@
 <#
   This script is designed to copy files from multiple work stations to the main one
   Syntax:  .\copy_logs.ps1 prod 2020-06-05  --> For choosing a specific date log
-			.\copy_logs.ps1 webportal  --> For choosing the generic webportal log
-			.\copy_logs.ps1 systemout  --> For choosing the systemout log
+			.\copy_logs.ps1 prod webportal  --> For choosing the generic webportal log
+			.\copy_logs.ps1 prod systemout  --> For choosing the systemout log
 #>
 
 
